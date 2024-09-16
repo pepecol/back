@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Office - Ganancias</title>
+</head>
+<body>
+    <h2>Back Office</h2>
+    <div>
+        <p>Ganancias: <span id="ganancias">$0</span></p>
+        <p>Usuario: <span id="usuario"></span></p>
+    </div>
+
+    <script>
+        let ganancias = 0;
+        let userStartTime = new Date();
+
+        // Cada minuto, aumentar las ganancias
+        setInterval(() => {
+            let currentTime = new Date();
+            let minutesPassed = Math.floor((currentTime - userStartTime) / (1000 * 60));
+            ganancias = minutesPassed * 0.10;
+            document.getElementById('ganancias').innerText = `$${ganancias.toFixed(2)}`;
+        }, 60000);
+
+        // Mostrar nombre de usuario (simulación)
+        document.getElementById('usuario').innerText = 'Usuario123'; // Puedes hacer dinámico con backend
+    </script>
+</body>
+</html>
