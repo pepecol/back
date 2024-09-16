@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Afiliados - Registro</title>
+</head>
+<body>
+    <h2>Registro de Afiliados</h2>
+    <form id="registerForm">
+        <label for="referralID">ID del Afiliado (si tienes uno):</label>
+        <input type="text" id="referralID" name="referralID"><br><br>
+        
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let referralID = document.getElementById('referralID').value;
+            
+            // Aquí se debe enviar la información a un servidor/backend para registrarse
+            console.log('Registrado:', username, password, referralID);
+        });
+    </script>
+</body>
+</html>
